@@ -1,0 +1,39 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Crear libro</h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="nombre" [(ngModel)]="libro.nombre" name="nombre"
+                placeholder="Ingrese Nombre">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="descripcion" [(ngModel)]="libro.descripcion" name="descripcion"
+                placeholder="Ingrese descripción">
+        </div>
+
+        <div class="form-group">
+            <input type="text" class="form-control" id="autor" [(ngModel)]="libro.autor" name="autor"
+                placeholder="Ingrese autor">
+        </div>
+
+        <div class="form-group">
+            <input type="date" class="form-control" id="fecha_publicacion" [(ngModel)]="libro.fecha_publicacion"
+                name="fecha_publicacion" placeholder="Ingrese Fecha publicación">
+        </div>
+
+        <div class="form-group">
+            <input type="number" class="form-control" id="numero_ejemplares" [(ngModel)]="libro.numero_ejemplares"
+                name="numero_ejemplares" placeholder="Ingrese número ejemplares" pattern="[1-9]\d{6,10}">
+        </div>
+
+        <div class="form-group">
+            <input type="number" class="form-control" id="costo" [(ngModel)]="libro.costo" name="costo"
+                placeholder="Ingrese costo">
+        </div>
+
+
+        <button class="btn btn-success" type="submit">Submit</button>
+
+    </form>
+</div>

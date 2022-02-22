@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link"> <label style="color: white; text-align: center;">Cristian Piguave</label>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="employees" routerLinkActive="active" class="nav-link">Libreria
+                <i class="fa fa-list" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-employee" routerLinkActive="active" class="nav-link">Agregar libro
+                <i class="fa fa-plus" aria-hidden="true"></i></a>
+        </li>
+
+
+
+    </ul>
+</nav>
+
+<h1 class="text-center"> {{title}} </h1>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

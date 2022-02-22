@@ -1,0 +1,53 @@
+<div class="container">
+
+    <table class="table table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" (click)="setOrder('id')">ID<i class='fa fa-sort fa-lg'></i></th>
+                <th scope="col" (click)="setOrder('nombre')">Nombre<i class='fa fa-sort fa-lg'></i></th>
+                <th scope="col" (click)="setOrder('descripcion')">Descripción<i class='fa fa-sort fa-lg'></i></th>
+                <th scope="col" (click)="setOrder('autor')">Autor <i class='fa fa-sort fa-lg'></i></th>
+                <th scope="col" (click)="setOrder('fecha_publicacion')">Fecha publicación <i
+                        class='fa fa-sort fa-lg'></i></th>
+                <th scope="col" (click)="setOrder('numero_ejemplares')">Número Ejemplares<i
+                        class='fa fa-sort fa-lg'></i></th>
+
+                <th scope="col" (click)="setOrder('costo')">Costo<i class='fa fa-sort fa-lg'></i></th>
+                <th> Acciones </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let libro of paises">
+                <td> {{ libro.id }} </td>
+                <td> {{ libro.nombre }} </td>
+                <td> {{ libro.descripcion }} </td>
+                <td> {{ libro.autor }} </td>
+                <td> {{ libro.fecha_publicacion }} </td>
+                <td> {{ libro.numero_ejemplares }} </td>
+                <td> {{ libro.costo }} </td>
+                <td>
+                    <button (click)="updateEmployee(libro.id)" class="btn btn-info">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </button>
+                    <button (click)="employeeDetails(libro.id)" class="btn btn-info">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                    <button (click)="deleteEmployee(libro.id)" class="btn btn-danger">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-angle-double-left fa-2x" (click)="rewind()"></i></td>
+                <td colspan="6">
+                    <span *ngFor="let p of totalPages; let i = index">
+                        <a style="cursor: pointer;" (click)="setPage(i)" [ngClass]="{'text-primary': i === page }">{{
+                            i+1 }}&nbsp;&nbsp;&nbsp;</a>
+                    </span>
+                </td>
+                <td><i class="fa fa-angle-double-right fa-2x" (click)="forward()"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
